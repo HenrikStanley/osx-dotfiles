@@ -13,7 +13,11 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 eval "$(zoxide init zsh --cmd j --no-aliases)"
 
 # Setup Fast Node Manager auto change on CD
-eval "$(fnm env --use-on-cd)"
+# eval "$(fnm env --use-on-cd)"
+
+# Setup rtx to detect .rtx.toml files and auto activate versions on CD
+eval "$(/opt/homebrew/bin/rtx activate zsh)"
+eval "$(rtx hook-env)"
 
 # Use Starship prompt with znap eval cashing
 #znap eval starship 'starship init zsh'
